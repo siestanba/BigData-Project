@@ -30,10 +30,10 @@ We implemented four distinct approaches, each inspired by a specific research pa
 | Scope | Accuracy | Precision | Recall | F1-Score |
 | :--- | :---: | :---: | :---: | :---: |
 | **Global (All Sources)** | **0.8447** | **0.8570** | **0.8275** | **0.8420** |
-| Twitter | - | - | - | 0.8351 |
-| Amazon Reviews | - | - | - | 0.9791 |
-| Steam Ubisoft | - | - | - | 0.8953 |
-| Social Mixed | - | - | - | 0.1321 |
+| Twitter | 0.8361 | 0.8402 | 0.8300 | 0.8351 |
+| Amazon Reviews | 0.9794 | 0.9910 | 0.9675 | 0.9791 |
+| Steam Ubisoft | 0.8942 | 0.8861 | 0.9047 | 0.8953 |
+| Social Mixed | 0.5114 | 0.5906 | 0.0744 | 0.1321 |
 
 > Takeaway: Strongest global method. Highly competitive on long texts but collapses entirely on the highly duplicated, low-diversity "Social Mixed" dataset.
 
@@ -43,10 +43,10 @@ We implemented four distinct approaches, each inspired by a specific research pa
 | Scope | Accuracy | Precision | Recall | F1-Score |
 | :--- | :---: | :---: | :---: | :---: |
 | **Global (All Sources)** | **0.8191** | **0.8319** | **0.7997** | **0.8155** |
-| Twitter | - | - | - | 0.8080 |
-| Amazon Reviews | - | - | - | 0.9539 |
-| Steam Ubisoft | - | - | - | 0.8706 |
-| Social Mixed | - | - | - | 0.6716 |
+| Twitter | 0.8139 | 0.8345 | 0.7831 | 0.8080 |
+| Amazon Reviews | 0.9254 | 0.9718 | 0.9366 | 0.9539 |
+| Steam Ubisoft | 0.8708 | 0.8721 | 0.8691 | 0.8706 |
+| Social Mixed | 0.5222 | 0.5198 | 0.9483 | 0.6716 |
 
 > Takeaway: Second globally, but far more robust on the unstable "Social Mixed" dataset than the pure DistilRoBERTa pipeline, likely due to explicit sequence and attention modeling.
 
@@ -56,10 +56,10 @@ We implemented four distinct approaches, each inspired by a specific research pa
 | Scope | Accuracy | Precision | Recall | F1-Score |
 | :--- | :---: | :---: | :---: | :---: |
 | **Global (All Sources)** | **0.6826** | **0.6780** | **0.6826** | **0.6777** |
-| Twitter | - | - | - | 0.6642 |
-| Amazon Reviews | - | - | - | 0.8059 |
-| Steam Ubisoft | - | - | - | 0.8059 |
-| Social Mixed | - | - | - | 0.4655 |
+| Twitter | 0.6644 | 0.6646 | 0.6644 | 0.6642 |
+| Amazon Reviews | 0.8063 | 0.8086 | 0.8063 | 0.8059 |
+| Steam Ubisoft | 0.8063 | 0.8086 | 0.8063 | 0.8059 |
+| Social Mixed | 0.4837 | 0.4755 | 0.4837 | 0.4655 |
 
 > Takeaway: Weaker globally, but maintains non-trivial scores on Steam and Amazon, proving that classical sparse/lexical signals still hold value on explicit-review domains.
 
@@ -69,10 +69,10 @@ We implemented four distinct approaches, each inspired by a specific research pa
 | Scope | Accuracy | Precision | Recall | F1-Score |
 | :--- | :---: | :---: | :---: | :---: |
 | **Global (All Sources)** | **0.5335** | **0.5337** | **0.5335** | **0.5328** |
-| Twitter | - | - | - | 0.8252 |
-| Amazon Reviews | - | - | - | 0.9378 |
-| Steam Ubisoft | - | - | - | 0.8653 |
-| Social Mixed | - | - | - | 0.4838 |
+| Twitter | 0.8253 | 0.8259 | 0.8253 | 0.8252 |
+| Amazon Reviews | 0.9378 | 0.9378 | 0.9378 | 0.9378 |
+| Steam Ubisoft | 0.8659 | 0.8720 | 0.8659 | 0.8653 |
+| Social Mixed | 0.5152 | 0.5202 | 0.5152 | 0.4838 |
 
 > Takeaway: Suffers globally due to task mismatch (generation vs. classification). Included as an informative negative transfer case, though it performs surprisingly well on specific subsets when evaluated individually.
 
