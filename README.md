@@ -25,6 +25,7 @@ Instead of framing the project as a single-model benchmark, we compare four pape
 We implemented four distinct approaches, each inspired by a specific research paper. Below is the description of each pipeline and its performance across our datasets under the 32K benchmark.
 
 ### 1. HUB-Inspired Social-Sentiment Modeling (DistilRoBERTa)
+**Author:** Sebastian
 **Description:** Inspired by the *When Sentiment Analysis Meets Social Network* (HUB) framework. While our datasets lack a usable social graph, we adapted the sentiment-analysis motivation using a robust, fine-tuned `distilroberta-base` Transformer. This acts as our primary, state-of-the-art contextual baseline.
 
 | Scope | Accuracy | Precision | Recall | F1-Score |
@@ -38,6 +39,7 @@ We implemented four distinct approaches, each inspired by a specific research pa
 > Takeaway: Strongest global method. Highly competitive on long texts but collapses entirely on the highly duplicated, low-diversity "Social Mixed" dataset.
 
 ### 2. BERT-BiLSTM-Attention Architecture
+**Author:** Nicolas
 **Description:** Inspired by Li et al. (2024), this hybrid architecture stacks contextual embeddings (BERT), sequential modeling (BiLSTM), and an Attention mechanism. It is designed to capture long-distance dependencies and explicitly weigh sentiment-bearing words, representing a heavier sequence-modeling design.
 
 | Scope | Accuracy | Precision | Recall | F1-Score |
@@ -51,6 +53,7 @@ We implemented four distinct approaches, each inspired by a specific research pa
 > Takeaway: Second globally, but far more robust on the unstable "Social Mixed" dataset than the pure DistilRoBERTa pipeline, likely due to explicit sequence and attention modeling.
 
 ### 3. Naive Bayes & Decision Tree (Steam-Style Baseline)
+**Author:** Feng
 **Description:** Inspired by Zuo's study on Steam reviews, this pipeline applies classical supervised machine learning methods (NB/DT) with explicit feature engineering (TF-IDF) and rigorous lexical preprocessing. It serves as our low-complexity, interpretable baseline.
 
 | Scope | Accuracy | Precision | Recall | F1-Score |
@@ -64,6 +67,7 @@ We implemented four distinct approaches, each inspired by a specific research pa
 > Takeaway: Weaker globally, but maintains non-trivial scores on Steam and Amazon, proving that classical sparse/lexical signals still hold value on explicit-review domains.
 
 ### 4. Recommendation-Justification Transfer
+**Author:** Fallou
 **Description:** Inspired by Ni et al. (2019). The original paper focuses on generating concise explanations from reviews. While the task differs from pure binary sentiment classification, its aspect-aware text modeling offers a transferable perspective on opinion-bearing language. 
 
 | Scope | Accuracy | Precision | Recall | F1-Score |
